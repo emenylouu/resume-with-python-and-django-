@@ -1,0 +1,855 @@
+{% load static %}
+<!-- Get Page Header
+================================================== -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Head Section Started
+================================================== -->
+<head>
+
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="UTF-8" />
+	<title>Home | Ameni</title>
+
+	
+	
+	<!-- Get Variables and include files
+  ================================================== -->	
+	
+	
+	<!-- Responsive is enabled 
+	================================================== -->	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="https://themes.profteamsolutions.com/identity-vcard/wp-content/uploads/2014/11/Favicon.png" type="image/vnd.microsoft.icon"/>	
+	
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Identity &raquo; Feed" href="https://themes.profteamsolutions.com/identity-vcard/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="Identity &raquo; Comments Feed" href="https://themes.profteamsolutions.com/identity-vcard/?feed=comments-rss2" />
+<link rel="alternate" type="application/rss+xml" title="Identity &raquo; Home Comments Feed" href="https://themes.profteamsolutions.com/identity-vcard/?feed=rss2&#038;page_id=21" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/themes.profteamsolutions.com\/identity-vcard\/wp-includes\/js\/wp-emoji.js?ver=4.7.2","twemoji":"https:\/\/themes.profteamsolutions.com\/identity-vcard\/wp-includes\/js\/twemoji.js?ver=4.7.2"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji4" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var stringFromCharCode = String.fromCharCode,
+			flag, flag2, technologist, technologist2;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * This works because the image will be one of three things:
+				 * - Two empty squares, if the browser doesn't render emoji
+				 * - Two squares with 'U' and 'N' in them, if the browser doesn't render flag emoji
+				 * - The United Nations flag
+				 *
+				 * The first two will encode to small images (1-2KB data URLs), the third will encode
+				 * to a larger image (4-5KB data URL).
+				 */
+				context.fillText( stringFromCharCode( 55356, 56826, 55356, 56819 ), 0, 0 );
+				if ( canvas.toDataURL().length < 3000 ) {
+					return false;
+				}
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				/*
+				 * Test for rainbow flag compatibility. As the rainbow flag was added out of sequence with
+				 * the usual Unicode release cycle, some browsers support it, and some don't, even if their
+				 * Unicode support is up to date.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + rainbow emoji).
+				 */
+				context.fillText( stringFromCharCode( 55356, 57331, 65039, 8205, 55356, 57096 ), 0, 0 );
+				flag = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55356, 57331, 55356, 57096 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				return flag !== flag2;
+			case 'emoji4':
+				/*
+				 * Emoji 4 has the best technologists. So does WordPress!
+				 *
+				 * To test for support, try to render a new emoji (woman technologist: medium skin tone),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (woman technologist: medium skin tone + personal computer).
+				 */
+				context.fillText( stringFromCharCode( 55357, 56425, 55356, 57341, 8205, 55357, 56507), 0, 0 );
+				technologist = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55357, 56425, 55356, 57341, 55357, 56507), 0, 0 );
+				technologist2 = canvas.toDataURL();
+
+				return technologist !== technologist2;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji4' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="{% static 'css/style.css'%}">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dashicons-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-includes/css/dashicons.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-jquery-ui-dialog-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-includes/css/jquery-ui-dialog.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.1.5' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.largeredbtn{font-family:"Raleway",sans-serif;font-weight:900;font-size:16px;line-height:60px;color:#fff !important;text-decoration:none;padding-left:40px;padding-right:80px;padding-top:22px;padding-bottom:22px;background:rgb(234,91,31); background:-moz-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(234,91,31,1)),color-stop(100%,rgba(227,58,12,1))); background:-webkit-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:-o-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:-ms-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:linear-gradient(to bottom,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea5b1f',endColorstr='#e33a0c',GradientType=0 )}.largeredbtn:hover{background:rgb(227,58,12); background:-moz-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(227,58,12,1)),color-stop(100%,rgba(234,91,31,1))); background:-webkit-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:-o-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:-ms-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:linear-gradient(to bottom,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#e33a0c',endColorstr='#ea5b1f',GradientType=0 )}.fullrounded img{-webkit-border-radius:400px;-moz-border-radius:400px;border-radius:400px}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.largeredbtn{font-family:"Raleway",sans-serif;font-weight:900;font-size:16px;line-height:60px;color:#fff !important;text-decoration:none;padding-left:40px;padding-right:80px;padding-top:22px;padding-bottom:22px;background:rgb(234,91,31); background:-moz-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(234,91,31,1)),color-stop(100%,rgba(227,58,12,1))); background:-webkit-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:-o-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:-ms-linear-gradient(top,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); background:linear-gradient(to bottom,rgba(234,91,31,1) 0%,rgba(227,58,12,1) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea5b1f',endColorstr='#e33a0c',GradientType=0 )}.largeredbtn:hover{background:rgb(227,58,12); background:-moz-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(227,58,12,1)),color-stop(100%,rgba(234,91,31,1))); background:-webkit-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:-o-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:-ms-linear-gradient(top,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); background:linear-gradient(to bottom,rgba(227,58,12,1) 0%,rgba(234,91,31,1) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#e33a0c',endColorstr='#ea5b1f',GradientType=0 )}.fullrounded img{-webkit-border-radius:400px;-moz-border-radius:400px;border-radius:400px}
+</style>
+<link rel='stylesheet' id='style-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/style.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='identity-icons-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/styles/identity-icons.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='identity-usage-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/styles/identity-usage.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='plugins-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/styles/identity/plugins.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/styles/identity/bootstrap.min.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='identity-style-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/styles/identity/style.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='style-responsive-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/styles/identity/style-responsive.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='identity-custom-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/identity-styles.css?ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.9' type='text/css' media='all' />
+<link rel='stylesheet' id='siteFont-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C200%2C200italic%2C300italic%2C300%2C400italic%2C600%2C600italic%2C700italic%2C700%2C900%2C900italic&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='menuFont-css'  href='https://fonts.googleapis.com/css?family&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='headingOneFont-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='headingTwoFont-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='headingThreeFont-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='headingFourFont-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='headingFiveFont-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='headingSixFont-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.7.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.1.5'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.1.5'></script>
+<link rel='https://api.w.org/' href='https://themes.profteamsolutions.com/identity-vcard/?rest_route=/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://themes.profteamsolutions.com/identity-vcard/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://themes.profteamsolutions.com/identity-vcard/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.2" />
+<link rel="canonical" href="https://themes.profteamsolutions.com/identity-vcard/?page_id=21" />
+<link rel='shortlink' href='https://themes.profteamsolutions.com/identity-vcard/?p=21' />
+<link rel="alternate" type="application/json+oembed" href="https://themes.profteamsolutions.com/identity-vcard/?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fthemes.profteamsolutions.com%2Fidentity-vcard%2F%3Fpage_id%3D21" />
+<link rel="alternate" type="text/xml+oembed" href="https://themes.profteamsolutions.com/identity-vcard/?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fthemes.profteamsolutions.com%2Fidentity-vcard%2F%3Fpage_id%3D21&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<style type="text/css" data-type="vc_custom-css">.make-margin-bottom-zero{
+    margin-bottom: 0;
+}
+
+.make-margin-top-sixtytwo{
+    margin-top: 62px !important;
+}
+
+.make-margin-bottom-six{
+    margin-bottom: 6px;
+}
+
+.make-margin-bottom-seventy{
+    margin-bottom: 70px;
+}
+
+.make-margin-bottom-twenty{
+    margin-left: 20px !important;
+}
+
+.make-margin-bottom-sixty{
+    margin-bottom: 60px;
+}
+
+.identity-side-video.wpb_video_widget .wpb_wrapper iframe{
+    height: 280px;
+}
+
+.make-margin-bottom-three{
+    margin-bottom: 3px;
+}
+
+.make-margin-bottom-twentytwo{
+    margin-bottom: 22px;
+}
+.make-margin-bottom-fourty,
+.make-margin-bottom-forty{
+    margin-bottom: 40px;
+}
+
+.make-text-align-center{
+    text-align: center;
+}
+
+.make-margin-bottom-sixtytwo{
+    margin-bottom: 62px;
+}
+
+.make-margin-bottom-eight{
+    margin-bottom: 8px;
+}
+
+.make-margin-bottom-eighteen{margin-bottom:18px;}
+.make-margin-bottom-thirteen{margin-bottom:13px;}
+
+.make-button-margin .btn.btn-primary{
+    margin-left:20px !important;
+}
+
+.vc_column-inner.vc_custom_1450395668012{padding:0px !important;}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1442957040306{background-color: #474d5d !important;}.vc_custom_1442957064511{background-color: #efefef !important;}.vc_custom_1442957099879{background-color: #efefef !important;}.vc_custom_1442957123992{background-color: #474d5d !important;}.vc_custom_1442957151209{background-color: #efefef !important;}.vc_custom_1442958156357{background-image: url(https://themes.profteamsolutions.com/identity-vcard/wp-content/uploads/2014/09/parallax3.jpg?id=103) !important;}.vc_custom_1442957184499{background-color: #474d5d !important;}.vc_custom_1450396522267{margin-bottom: 0px !important;background-color: #efefef !important;}.vc_custom_1450399897560{margin-top: 0px !important;padding-top: 0px !important;padding-bottom: 0px !important;}.vc_custom_1416731840698{margin-bottom: 50px !important;}.vc_custom_1416738722275{margin-bottom: 0px !important;}.vc_custom_1450395829266{margin-bottom: 0px !important;}.vc_custom_1450390061407{margin-bottom: 0px !important;}.vc_custom_1450395768414{margin-bottom: 0px !important;}.vc_custom_1450395668012{margin-top: 0px !important;}.vc_custom_1450399573245{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 0px !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>	
+</head>
+<!-- Head Section End
+================================================== -->
+
+
+
+
+<!-- Body Section Started
+================================================== -->
+<body class="page-template page-template-homepage page-template-homepage-php page page-id-21 single-page identity-mobile-hide-animation identity-pc-device  wpb-js-composer js-comp-ver-4.9 vc_responsive">
+
+	
+	<!-- Navbar -->
+		<!-- Navigation -->
+		<div class="navbar navbar-fixed-top ">
+			<nav id="navigation-sticky" class="trans-nav">
+				<!-- Navigation Inner -->
+				<div class="container inner">
+					<div class="logo">
+						<!-- Navigation Logo Link -->
+						<a href="" title="A website by Ameni" rel="home" class="scroll">
+															EMENY			
+													</a>					
+					</div>
+					
+					
+					<!-- Mobile Menu Button -->
+					<a class="mobile-nav-button"><i class="fa fa-bars"></i></a>
+					<!-- Navigation Menu -->
+					<div class="nav-menu">
+						<div class="nav">
+							<div class="menu-identity-container"><ul id="menu-identity" class="menu nav"><li  class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#home">Home</a></li>
+
+
+
+<li  class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#skills">Skills</a></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#resume">Resume</a></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom "><a href="#contact">Contact</a></li>
+</ul></div>						</div>
+					</div>
+					<!-- End Navigation Menu -->
+				</div>
+			<!-- End Navigation Inner -->
+			</nav>
+			<!-- End Navigation -->
+		</div>
+	<!-- End Navbar -->
+	
+   <!-- === START SLIDER SECTION === -->		
+			<section id="home">
+			<link href="https://fonts.googleapis.com/css?family=Source Sans Pro:700" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+<!-- START REVOLUTION SLIDER 5.1.5 fullwidth mode -->
+	<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.1.5">
+<ul>	<!-- SLIDE  -->
+	<li data-index="rs-1" data-transition="notransition" data-slotamount="7" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://themes.profteamsolutions.com/identity-vcard/wp-content/uploads/2014/11/slide11-100x50.png"  data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt="slide1"  width="1280" height="859" data-lazyload="https://cdn2.hubspot.net/hubfs/678212/designdeath2.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption black   tp-resizeme" 
+			 id="slide-1-layer-1" 
+			 data-x="['center','center','center','center']" data-hoffset="['2','2','2','2']" 
+			 data-y="['middle','middle','middle','middle']" data-voffset="['45','45','45','45']" 
+						data-width="507"
+			data-height="none"
+			data-whitespace="normal"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power3.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="1000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 5; min-width: 507px; max-width: 507px; white-space: normal; line-height: 100px; font-weight: 700;padding:4px 20px 4px 20px;border-color:rgba(255, 255, 255, 1.00);"> AMENI LOUHICHI
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption StyleTwo   tp-resizeme" 
+			 id="slide-1-layer-2" 
+			 data-x="['center','center','center','center']" data-hoffset="['15','15','15','15']" 
+			 data-y="['middle','middle','middle','middle']" data-voffset="['-40','-40','-40','-40']" 
+						data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power3.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 6; white-space: nowrap; line-height: px;border-color:rgba(255, 255, 255, 1.00);">WELCOME TO MY SITE 
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-2" data-transition="notransition" data-slotamount="7" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://themes.profteamsolutions.com/identity-vcard/wp-content/uploads/2014/11/slide2-100x50.png"  data-rotate="0"  data-saveperformance="off"  data-title="Identity" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt="slide2"  width="1280" height="859" data-lazyload="https://res.cloudinary.com/dx9mo8k5d/image/upload/v1463495404/banner_smbohh.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption black   tp-resizeme" 
+			 id="slide-2-layer-1" 
+			 data-x="['center','center','center','center']" data-hoffset="['3','3','3','3']" 
+			 data-y="['middle','middle','middle','middle']" data-voffset="['50','50','50','50']" 
+						data-width="450"
+			data-height="none"
+			data-whitespace="normal"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power3.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="1000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 5; min-width: 663px; max-width: 663px; white-space: normal; line-height: 100px; font-weight: 100;padding:4px 20px 4px 20px;border-color:rgba(255, 255, 255, 1.00);">PROGRAMMER 
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption StyleTwo   tp-resizeme" 
+			 id="slide-2-layer-2" 
+			 data-x="['center','center','center','center']" data-hoffset="['5','5','5','5']" 
+			 data-y="['middle','middle','middle','middle']" data-voffset="['-48','-48','-48','-48']" 
+						data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power3.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="1000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 6; white-space: nowrap; line-height: px;border-color:rgba(255, 255, 255, 1.00);">CREATIVE - PROFESSIONAL - PASSIONATE 
+		</div>
+	</li>
+</ul>
+<div class="tp-bannertimer" style="height: 5px; background-color: rgba(0, 0, 0, 0.15);"></div>	</div>
+<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss=".tp-caption.black,.black{padding:4px 20px;font-family:Oswald,helvetica,arial,sans-serif;font-size:80px;line-height:1.2px;color:#fff;border-width:3px;border-color:rgb(255,255,255);border-style:solid;text-shadow:none;display:inline-block;letter-spacing:-2px;text-transform:uppercase}.tp-caption.StyleTwo,.StyleTwo{font-family:\"Source Sans Pro\";font-size:32px;font-weight:700;color:#fff;border-width:0px;border-color:rgb(255,255,255);border-style:none;letter-spacing:1px;text-transform:uppercase}";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+			
+						
+				
+			setREVStartSize();
+			function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+						jQuery(sliderID).show().html(errorMessage);
+				}
+						var tpj=jQuery;
+			
+			var revapi1;
+			tpj(document).ready(function() {
+				if(tpj("#rev_slider_1_1").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_1_1");
+				}else{
+					revapi1 = tpj("#rev_slider_1_1").show().revolution({
+						sliderType:"standard",
+jsFileLocation:"//themes.profteamsolutions.com/identity-vcard/wp-content/plugins/revslider/public/assets/js/",
+						sliderLayout:"fullwidth",
+						dottedOverlay:"none",
+						delay:9000,
+						navigation: {
+							keyboardNavigation:"off",
+							keyboard_direction: "horizontal",
+							mouseScrollNavigation:"off",
+							onHoverStop:"on",
+							touch:{
+								touchenabled:"on",
+								swipe_threshold: 75,
+								swipe_min_touches: 50,
+								swipe_direction: "horizontal",
+								drag_block_vertical: false
+							}
+							,
+							arrows: {
+								style:"hesperiden",
+								enable:true,
+								hide_onmobile:true,
+								hide_under:600,
+								hide_onleave:true,
+								hide_delay:200,
+								hide_delay_mobile:1200,
+								tmp:'',
+								left: {
+									h_align:"left",
+									v_align:"center",
+									h_offset:30,
+									v_offset:0
+								},
+								right: {
+									h_align:"right",
+									v_align:"center",
+									h_offset:30,
+									v_offset:0
+								}
+							}
+							,
+							bullets: {
+								enable:true,
+								hide_onmobile:true,
+								hide_under:600,
+								style:"hephaistos",
+								hide_onleave:true,
+								hide_delay:200,
+								hide_delay_mobile:1200,
+								direction:"horizontal",
+								h_align:"center",
+								v_align:"bottom",
+								h_offset:0,
+								v_offset:30,
+								space:5,
+								tmp:''
+							}
+						},
+						responsiveLevels:[1240,1024,778,480],
+						visibilityLevels:[1240,1024,778,480],
+						gridwidth:[1240,1024,778,480],
+						gridheight:[700,600,960,720],
+						lazyType:"smart",
+						parallax: {
+							type:"mouse",
+							origo:"slidercenter",
+							speed:2000,
+							levels:[2,3,4,5,6,7,12,16,10,50,46,47,48,49,50,55],
+							type:"mouse",
+						},
+						shadow:0,
+						spinner:"off",
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+						shuffle:"off",
+						autoHeight:"off",
+						hideThumbsOnMobile:"off",
+						hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						debugMode:false,
+						fallbacks: {
+							simplifyAll:"off",
+							nextSlideOnWindowFocus:"off",
+							disableFocusListener:false,
+						}
+					});
+				}
+			});	/*ready*/
+		</script>
+	
+				</div><!-- END REVOLUTION SLIDER -->		</section>			
+		<!-- === END SLIDER SECTION === -->			
+
+
+
+
+
+<!-- Page Begin
+================================================== -->
+<div class="main-container">
+					
+	<div class="main-page-column-data main-page-column-data-full">
+		<div class="get-column-container">			
+			<div class="page-content">
+				<div class="vc_row wpb_row vc_row-fluid make-margin-bottom-zero"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div id="about"></div><div class="homepage-container-design   " style="background-image:url();color:#909090;background-repeat:repeat; padding-top:50px; padding-bottom:0px; background-size:cover; background-position:top center;">
+			<div class="homepage-container-design-inner"><div class="vc_row wpb_row vc_inner vc_row-fluid make-margin-bottom-zero"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="section-title item_bottom text-center">
+		
+		<h1 style="color: ;">ABOUT <span style="background-color: rgba(59,63,80,0.6);">ME</span></h1>
+	</div></div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper">
+	  <div class="text-center item_bottom">
+	   <img src="{% static 'images/me.jpg'%}" class="img-center img-responsive" alt="photo"/>
+	   <div class="name-title" style="background-color: rgba(59,63,80,0.8);">
+		<h2 style="color:#FFF;">AMENI LOUHICHI</h2>
+		<h5 style="color:#FFF;">JUNIOR PROGRAMMER / SOFTWARE ENGINEER</h5>
+	   </div>
+	  </div>
+		  </div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<p class="quoteline" style="font-family: oswald !important; font-size: 18px !important; font-weight: normal !important; color: black">A Flexible, resilient Computer Engineering Student with a reliable
+personality and an international experience, self-driven and eager to learn with an
+independent working style.I ,also, percieve myself as a scrupulous person who’s
+constantly passioned about discovering new technologies and picking up tasks
+quickly under pressure.
+So far I have C, C#, JAVA, PHP7, HTML5, CSS3, Bootstrap, and SQL, MySQL, PostgreSQL, and MongoDB and
+a little knowledge of Git/GitHub (But I'm working on It :-) ). I’m currently working on the spring boot framework
+and I've started learning Python in both its general context and its applications in reinforcement deep learning
+specifically along with C++. I'm still enthusiastically grabbing onto any other programming language, Methodology
+or framework I can add to grow up my knowledge.</p>
+
+
+		</div>
+	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><div style="color:#333333;">
+						<ul class="fa-ul">
+							<li><img src ="https://res.cloudinary.com/dch9d6ecr/image/upload/v1486836300/Logomakr_3OHOdB_rjmz7d.png" height="20" width="20" ></img><strong>birthdate</strong> : 01/05/1996</li>
+							<li><img src="https://res.cloudinary.com/dch9d6ecr/image/upload/v1486836889/Logomakr_0QXVQU_re82lf.png" height="20" width="20"></img><strong>phone</strong> : +216 54 505 ***</li>
+							<li><img src="https://res.cloudinary.com/dch9d6ecr/image/upload/v1486837095/Logomakr_2AxSKL_tglsyc.png" height="20" width ="20"></img><strong>email</strong> : emeny.louhichi@gmail.com</li>
+							<li><img src="https://res.cloudinary.com/dch9d6ecr/image/upload/v1486837211/Logomakr_3vXpaw_pboxh1.png" height="20" width="20"></img><strong>website</strong> : https://www.linkedin.com/in/ameni-louhichi/
+</li>	
+							<li><img src="https://res.cloudinary.com/dch9d6ecr/image/upload/v1486837354/Logomakr_2tqzL6_odoakg.png" height="20" width="20"></img><strong>address</strong> : Monastir, Tunisia</li>
+						</ul></div><div class="vc_empty_space"  style="height: 60px" ><span class="vc_empty_space_inner"></span></div>
+	</div></div></div></div></div></div></div></div></div></div>
+		
+		
+	
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+							</div></div></div></div></div></div></div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid make-margin-bottom-zero vc_custom_1442957064511 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div id="skills"></div><div class="homepage-container-design   " style="background-image:url();color:#666666;background-repeat:repeat; padding-top:50px; padding-bottom:5px; background-size:cover; background-position:top center;">
+			<div class="homepage-container-design-inner"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1416731840698"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="section-title item_bottom text-center">
+		
+		<h1 style="color: ;">MY <span style="background-color: rgba(59,63,80,0.6);">SKILLS</span></h1>
+	</div></div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid customtable"><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="chart" data-percent="30">
+				<span class="percent">30</span>
+				<h4>Python</h4>
+				<p>
+Still learning python.
+				</p>
+			</div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="chart" data-percent="50">
+				<span class="percent">50</span>
+				<h4>Java</h4>
+				<p>
+humble experience with developping web application.
+				</p>
+			</div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="chart" data-percent="40">
+				<span class="percent">40</span>
+				<h4>HTML/CSS/</h4>
+				<p>
+I can get creative playing with both HTML and CSS.	
+				</p>
+			</div></div></div></div></div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid make-margin-bottom-zero vc_custom_1442957099879 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="homepage-container-design   " style="background-image:url();color:#666666;background-repeat:repeat; padding-top:27px; padding-bottom:30px; background-size:cover; background-position:top center;">
+			<div class="homepage-container-design-inner"><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper">
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="70"><strong>Creative  70%</strong></span>
+						</div>
+						</li>
+					</ul>
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="70"><strong>Leadership  70%</strong></span>
+						</div>
+						</li>
+					</ul>
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="90"><strong>Interpersonal Communication 90%</strong></span>
+						</div>
+						</li>
+						<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="80"><strong>Team-work 80%</strong></span>
+						</div>
+						</li>
+					</ul>
+					</ul></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper">
+        
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="100"><strong>Arabic  100%</strong></span>
+						</div>
+						</li>
+					</ul>
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="85"><strong>English 85%</strong></span>
+						</div>
+						</li>
+					</ul>
+						<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="85"><strong>French 85%</strong></span>
+						</div>
+						</li>
+					</ul>
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="30"><strong>Turkish  30%</strong></span>
+						</div>
+						</li>
+					</ul>
+					<ul class="skillBar">
+						<li>
+						<div class="skillBg">
+							<span data-width="20"><strong>German  20%</strong></span>
+						</div>
+						</li>
+					</ul>
+					
+					</div></div></div></div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid make-margin-bottom-zero vc_custom_1442957123992 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="homepage-container-design   " style="background-image:url();color:#666666;background-repeat:repeat; padding-top:70px; padding-bottom:30px; background-size:cover; background-position:top center;">
+			<div class="homepage-container-design-inner"><div class="vc_row wpb_row vc_inner vc_row-fluid make-text-align-center vc_custom_1416738722275"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
+
+</div></div></div></div><div class="homepage-container-design   " style="background-image:url();color:#666666;background-repeat:repeat; padding-top:50px; padding-bottom:25px; background-size:cover; background-position:top center;">
+		<div class="homepage-container-design   " style="background-image:url();color:#666666;background-repeat:repeat; padding-top:50px; padding-bottom:5px; background-size:cover; background-position:top center;">
+			<div class="homepage-container-design-inner"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1416731840698"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="section-title item_bottom text-center">
+		
+	
+		<h1 style="color: ;">MY <span style="background-color: rgba(59,63,80,0.6);" id="resume">RESUME</span></h1>
+	</div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
+		<ul class="timeline resume-timeline list-unstyled">
+						
+		<li class="title">My Education</li>
+				<li class="note item_left">
+					<h4>Highschool | Mathematics </h4>
+					<h5 style="color: white">Bourguiba Highschool</h5>
+					<p class="desc">
+Baccalaureate in mathematics					</p>
+					<span class="date">2012 - 2016</span>
+					<span class="arrow fa fa-play"></span>
+				</li>
+				<li class="note item_right">
+					<h4>BSc | Majoring in Computer Engineering</a></h4>
+					<h5 style="color: white">Okan University</h5>
+					<p class="desc">
+						satisfying results throughout the years and a graduation with a GPA of 3.45 <br>
+            
+					</p>
+					<span class="date">2017 - 2021</span>
+					<span class="arrow fa fa-play"></span>
+				</li>	
+
+				<li class="title">My Experience</li>
+				<li class="note item_left">
+					<h4> Intern | I'M NOT A BARISTA NPO </h4>
+					<h5 style="color: white">software engineer | Backend developer </h5>
+					<p class="desc">
+Develop a quality web application that helps coffee-shop owners, baristas and
+clients grease the wheels of making coffees easily accessible, expand their
+coffee friends, and build friendships based on the same interests.
+• Technologies:SPRINGBOOT for the backend and ANGULAR for the front
+end					</p>
+					<span class="date">2021</span>
+					<span class="arrow fa fa-play"></span>
+				</li>
+				<li class="note item_right">
+					<h4>Intern | Istanbul Okan University In Turkey.</a></h4>
+					<h5 style="color: white">Computer Engineer</h5>
+					<p class="desc">
+						Study and simulate an intelligent intersection project with distibuted multiobjective systems for autonomous vehicles using SUMO and PYTHON to
+optimize two main objectives.
+o fuel consumption / accidents rates. <br>
+            
+					</p>
+					<span class="date">2021</span>
+					<span class="arrow fa fa-play"></span>
+				</li>
+				
+				<li class="title">My Hobbies</li>
+				<li class="note item_left">
+					
+					<h4>Sports</h4>
+				
+					
+					<span class="arrow fa fa-play"></span>
+				</li>
+				<li class="note item_right">
+					<h4> Travelling</h4>
+					
+					
+					<span class="arrow fa fa-play"></span>
+				</li>
+			
+					  </ul>
+					</div></div></div></div></div></div></div></div></div></div>
+					  <div class="vc_row wpb_row vc_row-fluid make-margin-bottom-zero vc_custom_1442958156357 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div id="clients"></div><div class="homepage-container-design   " style="background-image:url();color:#666666;background-repeat:repeat; padding-top:80px; padding-bottom:45px; background-size:cover; background-position:top center;">
+			<div class="homepage-container-design-inner"><div class="section-title  text-center">
+	
+			   <!-- // Footer & contact info -->
+    <footer>
+	
+        <h2 style="color: white" id="contact">Let's Keep in Touch! </h2>
+        <br>
+        <a href="mailto:emeny.louhichi@gmail.com">Email : emeny.louhichi@gmail.com</a> <br>
+        <a href="/" target="_blank">Portfolio : My website</a><br>
+        <a href="https://github.com/emenylouu" target="_blank">Github Account: emenylouu </a><br>
+        <a href="https://www.linkedin.com/in/ameni-louhichi/" target="_blank">LinkedIn Account: ameni-louhichi </a></li><br>
+           
+        
+
+        <p>Copyright &copy; 2021 AMENI LOUHICHI</p>
+		
+    </footer>
+
+
+
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/wpdialog.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/jquery.visible.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/prof.common.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/retina.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/scripts-top.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/scripts-bottom.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/bootstrap.min.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/jquery.isotope.min.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/jquery.sticky.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/jquery.nicescroll.min.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/jquery.flexslider.min.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/jquery.validate.min.js?ver=4.7.2'></script>
+
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/identity/script.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/themes/Identity-vcard/js/numinate.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-includes/js/wp-embed.js?ver=4.7.2'></script>
+<script type='text/javascript' src='https://themes.profteamsolutions.com/identity-vcard/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=4.9'></script>
+</body>
+</html>
+
