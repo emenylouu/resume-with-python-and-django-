@@ -1,1 +1,1 @@
-# simple-resume-with-python-and-django-
+# simple resume with python and django
